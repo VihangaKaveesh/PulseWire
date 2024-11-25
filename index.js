@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Cloudinary and Multer imports
 const cloudinary = require('cloudinary').v2;
