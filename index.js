@@ -25,8 +25,8 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'article_images', // Cloudinary folder name
-    allowed_formats: ['jpg', 'png', 'gif'], // Allowed file formats
+    folder: 'article_images', 
+    allowed_formats: ['jpg', 'png', 'gif'], 
   },
 });
 
@@ -110,7 +110,7 @@ app.post('/create', upload.single('image'), async (req, res) => {
       title,
       content,
       author,
-      image: req.file ? req.file.path : null, // Cloudinary's URL for the uploaded image
+      image: req.file ? req.file.path : null, 
     });
 
     const savedArticle = await newArticle.save();
@@ -126,7 +126,7 @@ app.put('/update/:id', upload.single('image'), async (req, res) => {
   const updateFields = { title, content, author };
 
   if (req.file) {
-    updateFields.image = req.file.path; // Cloudinary's URL for the new image
+    updateFields.image = req.file.path; 
   }
 
   try {
